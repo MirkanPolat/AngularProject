@@ -1,10 +1,17 @@
+@mixin dFlex($js: center, $ai: center, $g: null) {
+  display: flex;
+  justify-content: $js;
+  align-items: $ai;
+  @if $g != null {
+    gap: $g;
+  }
+}
+
 nav {
   width: 100%;
   padding: 32px;
-  display: flex;
-  justify-content: space-between;
+  @include dFlex(space-between);
   box-sizing: border-box;
-  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
